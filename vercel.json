@@ -1,0 +1,44 @@
+{
+  "redirects": [
+    {
+      "source": "/treino-feminino",
+      "destination": "/#plano-3x",
+      "permanent": false
+    },
+    {
+      "source": "/treino-feminino-4x",
+      "destination": "/#plano-4x",
+      "permanent": false
+    },
+    {
+      "source": "/treino-feminino-5x",
+      "destination": "/#plano-5x",
+      "permanent": false
+    },
+    {
+      "source": "/treino-masculino",
+      "destination": "/#plano-3x_masc",
+      "permanent": false
+    },
+    {
+      "source": "/treino-masculino-4x",
+      "destination": "/#plano-4x_masc",
+      "permanent": false
+    },
+    {
+      "source": "/treino-masculino-5x",
+      "destination": "/#plano-5x_masc",
+      "permanent": false
+    },
+    {
+      "source": "/treino-individual",
+      "destination": "/#plano-individual",
+      "permanent": false
+    },
+    {
+      "source": "/planos",
+      "destination": "/#oferta",
+      "permanent": false
+    }
+  ]
+}
