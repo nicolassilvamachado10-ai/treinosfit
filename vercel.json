@@ -39,6 +39,26 @@
       "source": "/planos",
       "destination": "/#oferta",
       "permanent": false
+    },
+    {
+      "source": "/conteudo/:path*",
+      "destination": "/",
+      "permanent": false
     }
-  ]
+  ],
+  "rewrites": [
+    {
+      "source": "/aluno",
+      "destination": "/aluno.html"
+    },
+    {
+      "source": "/area-do-aluno",
+      "destination": "/aluno.html"
+    }
+  ],
+  "functions": {
+    "api/file.js": {
+      "includeFiles": "conteudo/**"
+    }
+  }
 }
