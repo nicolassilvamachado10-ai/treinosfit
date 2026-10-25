@@ -125,7 +125,7 @@ a{color:inherit}
 .pc .x{font-family:Anton,Impact,sans-serif;font-size:96px;line-height:.85}
 .f .pc .x{color:var(--rose)}.m .pc .x{color:var(--blue)}
 .pc .nm{font-family:Anton,Impact,sans-serif;font-size:30px;text-transform:uppercase;line-height:1;margin:4px 0 6px}
-.pc .ds{color:#d7dbe0;font-size:15px;margin:0 0 18px;max-width:62%;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.pc .ds{color:#d7dbe0;font-size:15px;margin:0 0 18px;max-width:100%;text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .pc .x,.pc .nm{text-shadow:0 2px 14px rgba(0,0,0,.7)}
 .pc .ft{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.15);padding-top:16px}
 .pc .pr{font-family:Anton,Impact,sans-serif;font-size:32px;white-space:nowrap}
@@ -343,19 +343,19 @@ var P=[
 var U=function(id,w){return 'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w='+(w||900)+'&q=65'};
 var lock='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round"/></svg>';
 var tail='<p class="mu" style="font-size:14px;margin-top:16px">Acesso no seu e-mail logo após o pagamento • Sem aplicativo • Acesso vitalício • Garantia de 7 dias • Pix ou cartão</p>';
-function card(p){return '<a class="pc rv" href="#plano-'+p.id+'"><div class="ph" style="background-image:url('+U(p.bg,700)+')"></div><img class="cut" src="'+p.img+'" alt="" loading="lazy"><span class="tag">Treino '+(p.g=='f'?'feminino':'masculino')+'</span>'+(p.hot?'<span class="hot">'+p.hot+'</span>':'')+'<div class="x">'+p.x+'</div><div class="nm">'+p.nm+'</div><p class="ds">'+p.ds+' '+p.x+' por semana.</p><div class="ft"><span class="pr">R$ 27,97</span><span class="go">Ver treino <i>→</i></span></div></a>'}
+function card(p){return '<a class="pc rv" href="#plano-'+p.id+'"><div class="ph" style="background-image:url('+U(p.bg,700)+')"></div><span class="tag">Treino '+(p.g=='f'?'feminino':'masculino')+'</span>'+(p.hot?'<span class="hot">'+p.hot+'</span>':'')+'<div class="x">'+p.x+'</div><div class="nm">'+p.nm+'</div><p class="ds">'+p.ds+' '+p.x+' por semana.</p><div class="ft"><span class="pr">R$ 27,97</span><span class="go">Ver treino <i>→</i></span></div></a>'}
 document.getElementById('pf').innerHTML=P.filter(function(p){return p.g=='f'}).map(card).join('');
 document.getElementById('pm').innerHTML=P.filter(function(p){return p.g=='m'}).map(card).join('');
 var lv=[['Iniciante','2 meses de treino',33],['Intermediário','4 meses de treino',66],['Avançado','6 meses de treino',100]];
 function view(id,ey,title,price,lead,btn,img,bg,levels){
  return '<div class="view" id="plano-'+id+'" hidden><section class="pp"><div class="bg" style="background-image:url('+U(bg,1600)+')"></div><div class="in">'+
- '<a class="back" href="#planos">← Voltar para os treinos</a><div class="ppg"><div><p class="ey">'+ey+'</p><h1 class="d">'+title+'</h1><div class="price">'+price+'<small>pagamento único</small></div><p class="lead mu">'+lead+'</p>'+btn+tail+'</div>'+
+ '<a class="back" href="#planos">← Voltar para os treinos</a><div class="ppg"'+(img?'':' style="grid-template-columns:1fr"')+'><div><p class="ey">'+ey+'</p><h1 class="d">'+title+'</h1><div class="price">'+price+'<small>pagamento único</small></div><p class="lead mu">'+lead+'</p>'+btn+tail+'</div>'+
  '<div>'+(img?'<img class="cut2" src="'+img+'" alt="">':'')+'</div></div>'+
  (levels?'<h2 class="d" style="font-size:clamp(34px,4vw,52px);margin-top:80px">Seus <em>3 níveis</em> de treino</h2><div class="lvls">'+lv.map(function(l){return '<div class="lv"><span class="lk">'+lock+'</span><b>'+l[0]+'</b><span class="mu">'+l[1]+'</span><div class="bar"><i style="width:'+l[2]+'%"></i></div><small>Liberado após o pagamento</small></div>'}).join('')+'</div><p class="note">Os treinos ficam bloqueados até a confirmação do pagamento.</p>':'')+
  '</div></section></div>'}
 var V=P.map(function(p){var t='Treino '+(p.g=='m'?'masculino ':'')+p.x+' na semana';var u='https://pay.kiwify.com.br/'+p.pay+'?utm_source=site&utm_medium=cta&utm_content='+p.id;
- return view(p.id,'#'+(p.g=='f'?'Treino':'Masculino')+p.x+' • Treino '+(p.g=='f'?'feminino':'masculino'),t,'R$ 27,97','Seu treino vem em 3 níveis, do iniciante ao avançado. Cada nível é liberado após o pagamento.','<a class="btn pulse" href="'+u+'" target="_blank" rel="noopener">Comprar treino '+(p.g=='m'?'masculino ':'')+p.x+' • R$ 27,97</a>',p.img,p.bg,true)}).join('');
-V+=view('individual','#Individual • Treino individual','Treino individual com a especialista','R$ 107,57','Montado pela especialista para o seu objetivo, seu nível e sua rotina, para mulheres e homens. Depois do pagamento, você recebe o contato da especialista no WhatsApp e ela conversa com você para montar o seu. Entrega imediata: o contato da especialista é liberado logo após a compra.','<a class="btn pulse" href="https://pay.kiwify.com.br/0Uufh9A?utm_source=site&utm_medium=cta&utm_content=individual" target="_blank" rel="noopener">Comprar treino individual • R$ 107,57</a>','individual.webp','photo-1541534741688-6078c6bfb5c5',false);
+ return view(p.id,'#'+(p.g=='f'?'Treino':'Masculino')+p.x+' • Treino '+(p.g=='f'?'feminino':'masculino'),t,'R$ 27,97','Seu treino vem em 3 níveis, do iniciante ao avançado. Cada nível é liberado após o pagamento.','<a class="btn pulse" href="'+u+'" target="_blank" rel="noopener">Comprar treino '+(p.g=='m'?'masculino ':'')+p.x+' • R$ 27,97</a>','',p.bg,true)}).join('');
+V+=view('individual','#Individual • Treino individual','Treino individual com a especialista','R$ 107,57','Montado pela especialista para o seu objetivo, seu nível e sua rotina, para mulheres e homens. Depois do pagamento, você recebe o contato da especialista no WhatsApp e ela conversa com você para montar o seu. Entrega imediata: o contato da especialista é liberado logo após a compra.','<a class="btn pulse" href="https://pay.kiwify.com.br/0Uufh9A?utm_source=site&utm_medium=cta&utm_content=individual" target="_blank" rel="noopener">Comprar treino individual • R$ 107,57</a>','','photo-1541534741688-6078c6bfb5c5',false);
 document.getElementById('views').innerHTML=V;
 var tr=document.getElementById('tr');tr.innerHTML+=tr.innerHTML;
 document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});var m=b.dataset.g=='m';document.getElementById('pf').hidden=m;document.getElementById('pm').hidden=!m;reveal()}});
