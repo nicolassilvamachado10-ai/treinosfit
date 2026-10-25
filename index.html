@@ -139,7 +139,7 @@ a{color:inherit}
 .pc:hover .go i{transform:rotate(-45deg)}
 .indv{margin-top:28px;border-radius:28px;overflow:hidden;position:relative;display:grid;grid-template-columns:1.1fr 1fr;min-height:380px;text-decoration:none;isolation:isolate;border:2px solid var(--line);transition:border-color .3s,transform .35s}
 .indv:hover{border-color:var(--lime);transform:translateY(-6px)}
-.indv .ph{background:url(https://images.unsplash.com/photo-1652363723009-3f2f4d85428e?auto=format&fit=crop&w=1000&q=65) center 15%/cover;position:relative}
+.indv .ph{background:url(https://images.unsplash.com/photo-1738523686534-7055df5858d6?auto=format&fit=crop&w=1000&q=65) center 40%/cover;position:relative}
 .indv .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,var(--bg2))}
 .indv .bx{background:var(--bg2);padding:48px;display:flex;flex-direction:column;justify-content:center}
 .indv .pr{font-family:Anton,Impact,sans-serif;font-size:56px;color:var(--lime);line-height:1;margin:18px 0 6px}
@@ -162,12 +162,13 @@ a{color:inherit}
 .chk li:before{content:"";flex:none;width:14px;height:14px;margin-top:6px;background:var(--lime);transform:skewX(-20deg)}
 /* faq */
 .faq{max-width:860px}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-weight:800;font-size:19px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 22px;margin-bottom:12px;transition:border-color .3s,background .3s}
+.faq details[open]{border-color:rgba(200,242,80,.55);background:#1d2127}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-weight:800;font-size:18px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary i{flex:none;width:36px;height:36px;border-radius:10px;border:2px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:22px;transition:transform .3s,background .3s,border-color .3s,color .3s}
 .faq details[open] summary i{transform:rotate(45deg);background:var(--lime);border-color:var(--lime);color:#0B0C0E}
-.faq details p{margin:0 0 24px;color:var(--mu);font-size:17px;max-width:720px}
+.faq details p{margin:0 0 22px;color:var(--mu);font-size:17px;max-width:720px}
 /* final */
 .fin{text-align:center;padding:140px 0;background:linear-gradient(rgba(11,12,14,.78),rgba(11,12,14,.92)),url(https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1800&q=60) center/cover;overflow:hidden}
 .fin .h2{font-size:clamp(46px,8vw,104px)}
@@ -203,6 +204,38 @@ a{color:inherit}
 .lv .bar i{display:block;height:100%;background:var(--lime);border-radius:8px}
 .lv small{color:var(--mu);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
 .note{margin-top:20px;color:var(--mu);font-size:15px}
+/* detalhes */
+#realidade,#duvidas,#planos{background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1.2px);background-size:22px 22px}
+.ab{position:relative}
+.abc>*{position:relative;z-index:1}
+.abc.no .abg{position:absolute;inset:0;z-index:0;background:url(https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=60) center/cover;filter:grayscale(1);opacity:.13}
+.abc:after{position:absolute;right:-6px;bottom:-70px;font:400 230px/1 Anton,Impact,sans-serif;z-index:0;pointer-events:none}
+.abc.no:after{content:"✕";color:rgba(255,255,255,.04)}
+.abc.yes:after{content:"✓";color:rgba(0,0,0,.08)}
+.tagx{display:inline-block;font:800 12px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:14px;background:#2a1f23;color:#FF6B81}
+.abc.yes .tagx{background:#0B0C0E;color:var(--lime)}
+.vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#0B0C0E;border:3px solid var(--lime);display:grid;place-items:center;font:400 28px Anton,Impact,sans-serif;color:var(--lime);z-index:5;box-shadow:0 0 0 8px var(--bg),0 0 40px rgba(200,242,80,.35)}
+.pdfsec{overflow:hidden;background:radial-gradient(55% 60% at 25% 50%,rgba(200,242,80,.17),transparent 70%),linear-gradient(rgba(19,21,25,.93),rgba(19,21,25,.97)),url(https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1600&q=60) center/cover}
+.pwrap{position:relative}
+.pwrap .big{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);font:400 clamp(150px,24vw,330px)/1 Anton,Impact,sans-serif;color:transparent;-webkit-text-stroke:2px rgba(200,242,80,.2);pointer-events:none;white-space:nowrap;z-index:0}
+.pwrap .pages{z-index:1}
+.pages img:nth-child(2){box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 2px rgba(200,242,80,.45),0 0 70px -10px rgba(200,242,80,.35)}
+.fchip{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;background:rgba(11,12,14,.9);backdrop-filter:blur(8px);border:1px solid rgba(200,242,80,.4);color:#fff;font:700 14px Inter,sans-serif;padding:10px 16px;border-radius:999px;box-shadow:0 16px 34px -12px rgba(0,0,0,.85);animation:fl 5s ease-in-out infinite;white-space:nowrap}
+.fchip b{color:var(--lime);font:400 22px/1 Anton,Impact,sans-serif}
+.fchip i{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--lime);color:#0B0C0E;display:grid;place-items:center;font-size:13px;font-weight:800}
+.fchip.c1{left:0;top:6%}.fchip.c2{right:0;top:48%;animation-delay:-1.7s}.fchip.c3{left:4%;bottom:5%;animation-delay:-3.4s}
+.fq{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.fqside{position:sticky;top:100px}
+.fqcard{position:relative;display:flex;align-items:flex-end;min-height:340px;margin-top:28px;border-radius:24px;overflow:hidden;border:1px solid var(--line);text-decoration:none;isolation:isolate}
+.fqcard .ph{position:absolute;inset:0;z-index:-2;background:url(https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=1000&q=60) center/cover;transition:transform .8s}
+.fqcard:hover .ph{transform:scale(1.06)}
+.fqcard:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(11,12,14,.97) 18%,rgba(11,12,14,.25))}
+.fqcard .tx{padding:28px;display:flex;flex-direction:column;gap:8px}
+.fqcard b{font:400 32px/1 Anton,Impact,sans-serif;text-transform:uppercase}
+.fqcard .tx>span:not(.btn){color:#d5d9df;margin-bottom:10px}
+.fqcard .btn{align-self:flex-start;padding:14px 24px;font-size:15px}
+@media(max-width:980px){.vs{position:relative;left:auto;top:auto;transform:none;justify-self:center;margin:-46px 0;width:64px;height:64px;font-size:24px}.fq{grid-template-columns:1fr;gap:24px}.fqside{position:static}.fqcard{min-height:230px;margin-top:8px}.pdfsec{background:radial-gradient(70% 40% at 50% 25%,rgba(200,242,80,.17),transparent 70%),linear-gradient(rgba(19,21,25,.93),rgba(19,21,25,.97)),url(https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=60) center/cover}}
+@media(max-width:640px){.fchip{font-size:12px;padding:8px 12px}.fchip b{font-size:18px}.fchip.c2{top:52%}.abc:after{font-size:170px;bottom:-50px}}
 @media(max-width:980px){.ab,.pv,.ppg,.indv{grid-template-columns:1fr}.steps,.plans,.lvls{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.badge{display:none}.indv .ph{min-height:420px}.indv .ph:after{background:linear-gradient(0deg,var(--bg2),transparent 60%)}.pages{max-width:520px}.nav a:not(.btn){display:none}.photo-sec{background-attachment:scroll}}
 @media(max-width:640px){.sec{padding:76px 0}.in{padding:0 18px}.steps,.plans,.lvls{grid-template-columns:1fr}.hero{min-height:auto;padding:110px 0 60px}.hero p.sub{font-size:17px}.hero .cta .btn{width:100%}.stats{margin-top:44px;gap:20px}.stat b{font-size:30px}.abc{padding:28px}.abc h3{font-size:28px}.pc{min-height:420px}.tabs{display:flex}.tab{flex:1;padding:14px 10px}.indv .bx{padding:30px}.pages{max-width:100%}.stk{display:block}.tick span{font-size:22px;padding:10px 18px}.lead{font-size:17px}.nav .btn{padding:10px 14px;font-size:12px}.logo{font-size:22px}.pp .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv,.hero h1 .ln span,.hero p.sub,.hero .cta,.stats{opacity:1;transform:none}}
@@ -239,13 +272,14 @@ a{color:inherit}
 <h2 class="d h2 rv">Chega de andar <em>em círculos</em></h2>
 <p class="lead mu rv">O problema quase nunca é falta de esforço. É falta de um treino com ordem, objetivo e progressão.</p>
 <div class="ab">
-<div class="abc no rv"><h3>Sem treino</h3><ul>
+<div class="abc no rv"><div class="abg"></div><span class="tagx">Antes</span><h3>Sem treino</h3><ul>
 <li><i>✕</i>Fica rodando entre os aparelhos sem saber o que fazer.</li>
 <li><i>✕</i>Copia treino de internet que não foi feito pra você.</li>
 <li><i>✕</i>Treina semanas e sente que nada muda.</li>
 <li><i>✕</i>Tem medo de se machucar fazendo o exercício errado.</li>
 </ul></div>
-<div class="abc yes rv d2"><h3>Com TreinosFit</h3><ul>
+<div class="vs" aria-hidden="true">VS</div>
+<div class="abc yes rv d2"><span class="tagx">Depois</span><h3>Com TreinosFit</h3><ul>
 <li><i>✓</i>Entra sabendo exatamente o que fazer em cada dia.</li>
 <li><i>✓</i>Exercício, série e repetição prontos, é só seguir.</li>
 <li><i>✓</i>Evolui do iniciante ao avançado, nível por nível.</li>
@@ -286,8 +320,8 @@ a{color:inherit}
 <div class="pay rv"><span><b>✓</b> Pix ou cartão de crédito</span><span><b>✓</b> Pagamento único</span><span><b>✓</b> Acesso vitalício</span><span><b>✓</b> Garantia de 7 dias</span></div>
 </div></section>
 
-<section class="sec" style="background:var(--bg2)"><div class="in pv">
-<div class="pages rv"><img src="pdf-pagina-1.webp" alt="Página de treino do PDF TreinosFit" loading="lazy"><img src="pdf-pagina-2.webp" alt="Outra página de treino do PDF" loading="lazy"></div>
+<section class="sec pdfsec"><div class="in pv">
+<div class="pwrap rv"><span class="big" aria-hidden="true">PDF</span><div class="pages"><img src="pdf-pagina-1.webp" alt="Página de treino do PDF TreinosFit" loading="lazy"><img src="pdf-pagina-2.webp" alt="Outra página de treino do PDF" loading="lazy"></div><span class="fchip c1"><b>3</b>níveis de treino</span><span class="fchip c2"><i>✓</i>Série • Repetição • Descanso</span><span class="fchip c3"><i>✉</i>Chega no seu e-mail</span></div>
 <div>
 <p class="ey rv">Por dentro do PDF</p>
 <h2 class="d h2 rv">Tudo pronto <em>pra seguir</em></h2>
@@ -301,9 +335,12 @@ a{color:inherit}
 </div>
 </div></section>
 
-<section class="sec" id="duvidas"><div class="in">
+<section class="sec" id="duvidas"><div class="in fq">
+<div class="fqside">
 <p class="ey rv">Dúvidas</p>
 <h2 class="d h2 rv">Perguntas <em>frequentes</em></h2>
+<a class="fqcard rv" href="#planos"><div class="ph"></div><div class="tx"><b>Ainda com dúvida?</b><span>Comece pelo treino 3x. Você tem 7 dias de garantia.</span><span class="btn">Ver os treinos →</span></div></a>
+</div>
 <div class="faq rv">
 <details><summary>Eu não sei montar treino. Serve pra mim?<i>+</i></summary><p>Sim. Você não precisa saber nada: o treino já vem pronto, com exercício, série e repetição de cada dia.</p></details>
 <details><summary>Sou iniciante. Qual escolho?<i>+</i></summary><p>O plano de 3x foi pensado pra quem está começando, e o treino vem em 3 níveis, do iniciante ao avançado.</p></details>
@@ -358,7 +395,7 @@ function view(id,ey,title,price,lead,btn,img,bg,levels){
  '</div></section></div>'}
 var V=P.map(function(p){var t='Treino '+(p.g=='m'?'masculino ':'')+p.x+' na semana';var u='https://pay.kiwify.com.br/'+p.pay+'?utm_source=site&utm_medium=cta&utm_content='+p.id;
  return view(p.id,'#'+(p.g=='f'?'Treino':'Masculino')+p.x+' • Treino '+(p.g=='f'?'feminino':'masculino'),t,'<s>R$ '+p.de+'</s>R$ '+p.por+'<em class="off">-'+p.off+'%</em>','Seu treino vem em 3 níveis, do iniciante ao avançado. Cada nível é liberado após o pagamento.','<a class="btn pulse" href="'+u+'" target="_blank" rel="noopener">Comprar treino '+(p.g=='m'?'masculino ':'')+p.x+' • R$ '+p.por+'</a>','',p.bg,true)}).join('');
-V+=view('individual','#Individual • Treino individual','Treino individual com a especialista','<s>R$ 189,99</s>R$ 149,99<em class="off">-21%</em>','Montado pela especialista para o seu objetivo, seu nível e sua rotina, para mulheres e homens. Depois do pagamento, você recebe o contato da especialista no WhatsApp e ela conversa com você para montar o seu. Entrega imediata: o contato da especialista é liberado logo após a compra.','<a class="btn pulse" href="https://pay.kiwify.com.br/0Uufh9A?utm_source=site&utm_medium=cta&utm_content=individual" target="_blank" rel="noopener">Comprar treino individual • R$ 149,99</a>','','photo-1652363723009-3f2f4d85428e',false);
+V+=view('individual','#Individual • Treino individual','Treino individual com a especialista','<s>R$ 189,99</s>R$ 149,99<em class="off">-21%</em>','Montado pela especialista para o seu objetivo, seu nível e sua rotina, para mulheres e homens. Depois do pagamento, você recebe o contato da especialista no WhatsApp e ela conversa com você para montar o seu. Entrega imediata: o contato da especialista é liberado logo após a compra.','<a class="btn pulse" href="https://pay.kiwify.com.br/0Uufh9A?utm_source=site&utm_medium=cta&utm_content=individual" target="_blank" rel="noopener">Comprar treino individual • R$ 149,99</a>','','photo-1738523686534-7055df5858d6',false);
 document.getElementById('views').innerHTML=V;
 var tr=document.getElementById('tr');tr.innerHTML+=tr.innerHTML;
 document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});var m=b.dataset.g=='m';document.getElementById('pf').hidden=m;document.getElementById('pm').hidden=!m;reveal()}});
